@@ -1,0 +1,6 @@
+---
+- name: balancer
+  src: http://rhce.domain7.example.com/materials/haproxy.tar
+
+- name: phpinfo
+  src: http://rhce.domain7.example.com/materials/phpinfo.tar
