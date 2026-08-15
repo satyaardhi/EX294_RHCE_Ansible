@@ -1,0 +1,26 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for apache
+- name: Install httpd
+  ansible.builtin.dnf:
+    name: httpd
+    state: present
+
+- name: Start service httpd, if not started
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Permanently enable httpd service, also enable it immediately if possible
+  ansible.builtin.firewalld:
+    name: httpd
+    state: enabled
+    permanent: true
+    immediate: true
+
+- name: template
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  notify: restart httpd

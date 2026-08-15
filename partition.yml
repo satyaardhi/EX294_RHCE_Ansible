@@ -1,0 +1,104 @@
+---
+# hosts and partition names must match with  entries in system, lsblk & inventory
+- name: Configure partitions
+  hosts: balancers
+  become: true
+
+  tasks:
+# Check if sdd exists
+    - name: Check whether sdd exists
+      ansible.builtin.stat:
+        path: /dev/sdd
+      register: sdd_disk
+
+    - name: Display message if sdd does not exist
+      ansible.builtin.debug:
+        msg: "Disk does not exist"
+      when: not sdd_disk.stat.exists
+
+# Configure sdb
+    - name: Create a partition on sdb
+      block:
+        - name: Create a 1500MiB partition on sdb
+          community.general.parted:
+            device: /dev/sdb
+            number: 1
+            part_type: primary
+            state: present
+            part_start: 1MiB
+            part_end: 1500MiB
+
+      rescue:
+        - name: Display error message
+          ansible.builtin.debug:
+            msg: "Could not create partition on that size"
+
+        - name: Create 800MiB partition on sdb
+          community.general.parted:
+            device: /dev/sdb
+            number: 1
+            part_type: primary
+            state: present
+            part_start: 1MiB
+            part_end: 800MiB
+
+    - name: Create ext4 filesystem on sdb1
+      community.general.filesystem:
+        fstype: ext4
+        dev: /dev/sdb1
+
+    - name: Create mount point for sdb1
+      ansible.builtin.file:
+        path: /newpart
+        state: directory
+        mode: '0755'
+
+    - name: Mount sdb1 persistently
+      ansible.posix.mount:
+        path: /newpart
+        src: /dev/sdb1
+        fstype: ext4
+        state: mounted
+
+# Configure sdc
+    - name: Create a partition on sdc
+      block:
+        - name: Create a 1500MiB partition on sdc
+          community.general.parted:
+            device: /dev/sdc
+            number: 1
+            part_type: primary
+            state: present
+            part_start: 1MiB
+            part_end: 1501MiB
+
+      rescue:
+        - name: Display error message
+          ansible.builtin.debug:
+            msg: "Could not create partition on that size"
+
+        - name: Create 800MiB partition on sdc
+          community.general.parted:
+            device: /dev/sdc
+            number: 1
+            state: present
+            part_start: 1MiB
+            part_end: 801MiB
+
+    - name: Create ext4 filesystem on sdc1
+      community.general.filesystem:
+        fstype: ext4
+        dev: /dev/sdc1
+
+    - name: Create mount point for sdc1
+      ansible.builtin.file:
+        path: /newpart
+        state: directory
+        mode: '0755'
+
+    - name: Mount sdc1 persistently
+      ansible.posix.mount:
+        path: /newpart
+        src: /dev/sdc1
+        fstype: ext4
+        state: mounted
