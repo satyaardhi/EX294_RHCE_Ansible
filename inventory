@@ -1,0 +1,15 @@
+[dev]
+node1 ansible_host=node1
+
+[test]
+node1 ansible_host=node1
+
+[prod]
+node1 ansible_host=node1
+node1 ansible_host=node1
+
+[balancers]
+node1 ansible_host=node1
+
+[webservers:children]
+prod
