@@ -1,0 +1,24 @@
+---
+- name: Configure DNF repositories
+  hosts: all
+  become: true
+
+  tasks:
+
+  - name: Configure EX294_BASE repository
+    ansible.builtin.yum_repository:
+      name: EX294_BASE
+      description: EX294 BASE repository software packages
+      baseur: http://192.168.29.120/BaseOS/
+      gpgcheck: yes
+      gpgkey: http://192.168.29.120/rhel-iso/RPM-GPG-KEY-redhat-release
+      enabled: yes
+
+  - name: Configure EX294_STREAM repository
+    ansible.builtin.yum_repository:
+      name: EX294_STREAM
+      description: EX294 STREAM repository software packages
+      baseurl: http://192.168.29.120/AppStream/
+      gpgchek: yes
+      gpgkey: http://192.168.29.120/rhel-iso/RPM-GPG-KEY-redhat-release
+      enabled: yes
