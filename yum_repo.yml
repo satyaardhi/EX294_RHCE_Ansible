@@ -22,3 +22,5 @@
       gpgcheck: yes
       gpgkey: http://192.168.29.120/rhel-iso/RPM-GPG-KEY-redhat-release
       enabled: yes
+
+# ansible-navigator run -m stdout yum_repo.yaml 
