@@ -1,0 +1,25 @@
+---
+- name: Manage packages on nodes
+  hosts: dev, test, prod
+  become: yes
+
+  tasks:
+
+  - name: Install php and mariadb packages on dev, test, prod group hosts
+    ansible.builtin.dnf:
+      name:
+        - php
+        - mariadb
+      state: present
+    
+  - name: Install "RPM Development Tools" package group on dev group hosts
+    ansible.builtin.dnf:
+      name: "@RPM Development Tools"
+      state: present
+    when: inventory_hostname in groups['dev']
+
+  - name: Update all packages to latest on dev group hosts
+    ansible.builtin.dnf:
+      name: "*"
+      state: latest
+    when: inventory_hostname in groups['dev']
