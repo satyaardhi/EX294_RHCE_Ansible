@@ -1,0 +1,36 @@
+---
+- name: Generating hwreport file
+  hosts: all
+  become: true
+
+  tasks:
+
+    - name: Download the file
+      ansible.builtin.get_url:
+        url: http://192.168.10.254/ex407/hwreport.empty
+        dest: /root/hwreport.txt
+        mode: '0644'
+
+    - name: Replace the content of hwreport.txt
+      ansible.builtin.replace:
+        path: /root/hwreport.txt
+        regexp: "{{ item.src }}"
+        replace: "{{ item.dest }}"
+      loop:
+        - src: "hostname"
+          dest: "{{ ansible_facts['hostname'] | default('NONE') }}"
+
+        - src: "biosversion"
+          dest: "{{ ansible_facts['bios_version'] | default('NONE') }}"
+
+        - src: "memory"
+          dest: "{{ ansible_facts['memtotal_mb'] | string | default('NONE') }}"
+
+        - src: "vdasize"
+          dest: "{{ (ansible_facts['devices']['vda'] | default({})).size |  default('NONE') }}"
+
+        - src: "vdbsize"
+          dest: "{{ (ansible_facts['devices']['vdb'] | default({})).size | default('NONE') }}"
+
+        - src: "vdcsize"
+          dest: "{{ (ansible_facts['devices']['vdc'] | default({})).size | default('NONE') }}"

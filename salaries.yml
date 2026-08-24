@@ -1,0 +1,12 @@
+---
+salaries:
+  - name: "Alice"
+    role: "Senior Engineer"
+    amount: 115000
+  - name: "Bob"
+    role: "DevOps Specialist"
+    amount: 125000
+  - name: "Charlie"
+    role: "IT Manager"
+    amount: 140000
+

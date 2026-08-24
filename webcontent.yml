@@ -1,0 +1,35 @@
+---
+- name: Configure web content
+  hosts: dev
+  become: true
+
+  tasks:
+
+  - name: Create webdev directory
+    ansible.builtin.file:
+      path: /webdev
+      state: directory
+      mode: '2775'
+      group: webdev
+      setype: httpd_sys_content_t
+
+  - name: Create symbolic link
+    ansible.builtin.file:
+      src: /webdev
+      dest: /var/www/html/webdev
+      state: link
+      setype: httpd_sys_content_t
+
+  - name: Create webdev index file
+    ansible.builtin.copy:
+      content: "Development\n"
+      dest: /webdev/index.html
+      mode: '0644'
+      setype: httpd_sys_content_t
+
+  - name: Enable HTTP service in firewalld
+    ansible.posix.firewalld:
+      service: http
+      state: enabled
+      immediate: true
+      permanent: true
