@@ -1,0 +1,5 @@
+HOST=managed-node-01
+MEMORY=2048
+BIOS=1.14.0-2
+VDA=30 GB
+VDB=NONE

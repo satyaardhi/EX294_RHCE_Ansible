@@ -17,6 +17,8 @@
         replace: "{{ item.dest }}"
       loop:
         - src: "hostname"
+          # NOTE: The requirement asks for Inventory Host Name, which is inventory_hostname.
+          # ansible_facts['hostname'] is the system hostname (which can differ from inventory).
           dest: "{{ inventory_hostname | default('NONE') }}"
 
         - src: "biosversion"
@@ -25,11 +27,11 @@
         - src: "memory"
           dest: "{{ ansible_facts['memtotal_mb'] | string | default('NONE') }}"
 
-        - src: "vdasize"
-          dest: "{{ (ansible_facts['devices']['vda'] | default({})).size |  default('NONE') }}"
+        - src: "sdasize"
+          dest: "{{ ansible_facts['devices']['sda']['size'] if (ansible_facts['devices']['vda'] is defined) else 'NONE' }}"
 
-        - src: "vdbsize"
-          dest: "{{ (ansible_facts['devices']['vdb'] | default({})).size | default('NONE') }}"
+        - src: "sdbsize"
+          dest: "{{ ansible_facts['devices']['sdb']['size'] if (ansible_facts['devices']['vdb'] is defined) else 'NONE' }}"
 
-        - src: "vdcsize"
-          dest: "{{ (ansible_facts['devices']['vdc'] | default({})).size | default('NONE') }}"
+        - src: "sdcsize"
+          dest: "{{ ansible_facts['devices']['sdc']['size'] if (ansible_facts['devices']['vdc'] is defined) else 'NONE' }}"

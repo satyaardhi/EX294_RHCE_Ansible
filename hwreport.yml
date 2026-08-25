@@ -4,13 +4,12 @@
   become: true
 
   tasks:
-
     - name: Download the file
       ansible.builtin.get_url:
         url: http://192.168.10.254/ex407/hwreport.empty
         dest: /root/hwreport.txt
         mode: '0644'
-
+        
     - name: Replace the content of hwreport.txt
       ansible.builtin.replace:
         path: /root/hwreport.txt
