@@ -1,32 +1,32 @@
 {
     "plays": [
         {
-            "__play_name": "Generating hwreport file",
-            "name": "Generating hwreport file",
+            "__play_name": "Create developer and manager users",
+            "name": "Create developer and manager users",
             "pattern": "all",
-            "play": "Generating hwreport file",
+            "play": "Create developer and manager users",
             "play_pattern": "all",
-            "play_uuid": "080027d8-b370-df10-76fc-000000000002",
-            "playbook": "/home/desktop/git/ansible_playbook/hwreport2.yml",
-            "playbook_uuid": "c89a3dbb-3899-4d5f-8a63-aa234a426a10",
+            "play_uuid": "080027d8-b370-0545-99ac-000000000002",
+            "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
+            "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
             "tasks": [
                 {
                     "__changed": false,
-                    "__duration": "4s",
+                    "__duration": "10s",
                     "__host": "node1",
                     "__number": 0,
                     "__result": "Ok",
                     "__task": "Gathering Facts",
                     "__task_action": "gather_facts",
-                    "duration": 4.444528,
-                    "end": "2026-08-25T12:32:13.883223+00:00",
+                    "duration": 9.640795,
+                    "end": "2026-08-25T12:48:07.007088+00:00",
                     "event_loop": null,
                     "host": "node1",
-                    "play": "Generating hwreport file",
+                    "play": "Create developer and manager users",
                     "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-df10-76fc-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/hwreport2.yml",
-                    "playbook_uuid": "c89a3dbb-3899-4d5f-8a63-aa234a426a10",
+                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
+                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
                     "remote_addr": "node1",
                     "res": {
                         "_ansible_verbose_override": true,
@@ -66,17 +66,17 @@
                             "ansible_date_time": {
                                 "date": "2026-08-25",
                                 "day": "25",
-                                "epoch": "1787661132",
-                                "epoch_int": "1787661132",
+                                "epoch": "1787662086",
+                                "epoch_int": "1787662086",
                                 "hour": "18",
-                                "iso8601": "2026-08-25T12:32:12Z",
-                                "iso8601_basic": "20260825T180212764163",
-                                "iso8601_basic_short": "20260825T180212",
-                                "iso8601_micro": "2026-08-25T12:32:12.764163Z",
-                                "minute": "02",
+                                "iso8601": "2026-08-25T12:48:06Z",
+                                "iso8601_basic": "20260825T181806681284",
+                                "iso8601_basic_short": "20260825T181806",
+                                "iso8601_micro": "2026-08-25T12:48:06.681284Z",
+                                "minute": "18",
                                 "month": "08",
-                                "second": "12",
-                                "time": "18:02:12",
+                                "second": "06",
+                                "time": "18:18:06",
                                 "tz": "IST",
                                 "tz_dst": "IST",
                                 "tz_offset": "+0530",
@@ -731,9 +731,9 @@
                                 "type": "loopback"
                             },
                             "ansible_loadavg": {
-                                "15m": 0.09716796875,
-                                "1m": 0.04296875,
-                                "5m": 0.0966796875
+                                "15m": 0.099609375,
+                                "1m": 0.22509765625,
+                                "5m": 0.09765625
                             },
                             "ansible_local": {},
                             "ansible_locally_reachable_ips": {
@@ -806,16 +806,16 @@
                             },
                             "ansible_machine": "x86_64",
                             "ansible_machine_id": "f6a57dfb94fe41599c9180e44c4e0a1a",
-                            "ansible_memfree_mb": 1117,
+                            "ansible_memfree_mb": 1111,
                             "ansible_memory_mb": {
                                 "nocache": {
-                                    "free": 1454,
-                                    "used": 251
+                                    "free": 1448,
+                                    "used": 257
                                 },
                                 "real": {
-                                    "free": 1117,
+                                    "free": 1111,
                                     "total": 1705,
-                                    "used": 588
+                                    "used": 594
                                 },
                                 "swap": {
                                     "cached": 0,
@@ -827,20 +827,20 @@
                             "ansible_memtotal_mb": 1705,
                             "ansible_mounts": [
                                 {
-                                    "block_available": 3594516,
+                                    "block_available": 3594376,
                                     "block_size": 4096,
                                     "block_total": 4176896,
-                                    "block_used": 582380,
+                                    "block_used": 582520,
                                     "device": "/dev/mapper/rhel-root",
                                     "dump": 0,
                                     "fstype": "xfs",
-                                    "inode_available": 8330776,
+                                    "inode_available": 8330756,
                                     "inode_total": 8386560,
-                                    "inode_used": 55784,
+                                    "inode_used": 55804,
                                     "mount": "/",
                                     "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
                                     "passno": 0,
-                                    "size_available": 14723137536,
+                                    "size_available": 14722564096,
                                     "size_total": 17108566016,
                                     "uuid": "0d6b16a7-05bb-47f1-a64a-de18dfdd9ca3"
                                 },
@@ -938,7 +938,7 @@
                                 "features": "+PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP -GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT -QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE",
                                 "version": 257
                             },
-                            "ansible_uptime_seconds": 8131,
+                            "ansible_uptime_seconds": 9084,
                             "ansible_user_dir": "/root",
                             "ansible_user_gecos": "Super User",
                             "ansible_user_gid": 0,
@@ -965,138 +965,320 @@
                         ]
                     },
                     "resolved_action": "ansible.builtin.gather_facts",
-                    "start": "2026-08-25T12:32:09.438695+00:00",
+                    "start": "2026-08-25T12:47:57.366293+00:00",
                     "task": "Gathering Facts",
                     "task_action": "gather_facts",
                     "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/hwreport2.yml:2",
-                    "task_uuid": "080027d8-b370-df10-76fc-000000000008",
-                    "uuid": "02b2159b-d820-495d-86df-82c8a2097ca6"
+                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:2",
+                    "task_uuid": "080027d8-b370-0545-99ac-00000000000b",
+                    "uuid": "4042d1d0-380e-4ba1-9305-0d2bbbdf75ee"
                 },
                 {
                     "__changed": false,
-                    "__duration": "15s",
+                    "__duration": "3s",
                     "__host": "node1",
                     "__number": 1,
                     "__result": "Ok",
-                    "__task": "Replace the content of hwreport.txt",
-                    "__task_action": "ansible.builtin.replace",
-                    "duration": 15.14182,
-                    "end": "2026-08-25T12:32:29.046481+00:00",
+                    "__task": "Create devops group",
+                    "__task_action": "ansible.builtin.group",
+                    "duration": 2.982128,
+                    "end": "2026-08-25T12:48:10.020973+00:00",
                     "event_loop": null,
                     "host": "node1",
-                    "play": "Generating hwreport file",
+                    "play": "Create developer and manager users",
                     "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-df10-76fc-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/hwreport2.yml",
-                    "playbook_uuid": "c89a3dbb-3899-4d5f-8a63-aa234a426a10",
+                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
+                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
                     "remote_addr": "node1",
                     "res": {
                         "changed": false,
+                        "gid": 1004,
+                        "name": "devops",
+                        "state": "present",
+                        "system": false
+                    },
+                    "resolved_action": "ansible.builtin.group",
+                    "start": "2026-08-25T12:48:07.038845+00:00",
+                    "task": "Create devops group",
+                    "task_action": "ansible.builtin.group",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:12",
+                    "task_uuid": "080027d8-b370-0545-99ac-000000000004",
+                    "uuid": "f5652c9f-2cfc-4166-9ea9-621efaae0d61"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "2s",
+                    "__host": "node1",
+                    "__number": 2,
+                    "__result": "Ok",
+                    "__task": "Create opsmgr group",
+                    "__task_action": "ansible.builtin.group",
+                    "duration": 2.161907,
+                    "end": "2026-08-25T12:48:12.197284+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Create developer and manager users",
+                    "play_pattern": "all",
+                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
+                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": false,
+                        "gid": 3003,
+                        "name": "opsmgr",
+                        "state": "present",
+                        "system": false
+                    },
+                    "resolved_action": "ansible.builtin.group",
+                    "start": "2026-08-25T12:48:10.035377+00:00",
+                    "task": "Create opsmgr group",
+                    "task_action": "ansible.builtin.group",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:20",
+                    "task_uuid": "080027d8-b370-0545-99ac-000000000005",
+                    "uuid": "69434c2e-c0b8-4ebf-84df-6d6192873bcd"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "7s",
+                    "__host": "node1",
+                    "__number": 3,
+                    "__result": "Ok",
+                    "__task": "Create developer users",
+                    "__task_action": "ansible.builtin.user",
+                    "duration": 6.709944,
+                    "end": "2026-08-25T12:48:18.924925+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Create developer and manager users",
+                    "play_pattern": "all",
+                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
+                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": true,
                         "msg": "All items completed",
                         "results": [
                             {
                                 "_ansible_item_label": {
-                                    "dest": "node1",
-                                    "src": "hostname"
+                                    "job": "developer",
+                                    "uid": 3001,
+                                    "username": "developer1"
                                 },
                                 "ansible_loop_var": "item",
-                                "changed": false,
+                                "append": true,
+                                "changed": true,
+                                "comment": "",
+                                "group": 3001,
+                                "groups": "devops",
+                                "home": "/home/developer1",
                                 "item": {
-                                    "dest": "node1",
-                                    "src": "hostname"
+                                    "job": "developer",
+                                    "uid": 3001,
+                                    "username": "developer1"
                                 },
-                                "msg": "",
-                                "rc": 0
+                                "move_home": false,
+                                "name": "developer1",
+                                "password": "NOT_LOGGING_PASSWORD",
+                                "shell": "/bin/bash",
+                                "state": "present",
+                                "uid": 3001
                             },
                             {
                                 "_ansible_item_label": {
-                                    "dest": "VirtualBox",
-                                    "src": "biosversion"
+                                    "job": "developer",
+                                    "uid": 3002,
+                                    "username": "developer2"
                                 },
                                 "ansible_loop_var": "item",
-                                "changed": false,
+                                "append": true,
+                                "changed": true,
+                                "comment": "",
+                                "group": 3002,
+                                "groups": "devops",
+                                "home": "/home/developer2",
                                 "item": {
-                                    "dest": "VirtualBox",
-                                    "src": "biosversion"
+                                    "job": "developer",
+                                    "uid": 3002,
+                                    "username": "developer2"
                                 },
-                                "msg": "",
-                                "rc": 0
+                                "move_home": false,
+                                "name": "developer2",
+                                "password": "NOT_LOGGING_PASSWORD",
+                                "shell": "/bin/bash",
+                                "state": "present",
+                                "uid": 3002
                             },
                             {
                                 "_ansible_item_label": {
-                                    "dest": "1705",
-                                    "src": "memory"
+                                    "job": "manager",
+                                    "uid": 4001,
+                                    "username": "manager1"
                                 },
                                 "ansible_loop_var": "item",
                                 "changed": false,
+                                "false_condition": "item.job == \"developer\"",
                                 "item": {
-                                    "dest": "1705",
-                                    "src": "memory"
+                                    "job": "manager",
+                                    "uid": 4001,
+                                    "username": "manager1"
                                 },
-                                "msg": "",
-                                "rc": 0
+                                "skip_reason": "Conditional result was False"
                             },
                             {
                                 "_ansible_item_label": {
-                                    "dest": "NONE",
-                                    "src": "vdasize"
+                                    "job": "manager",
+                                    "uid": 4002,
+                                    "username": "manager2"
                                 },
                                 "ansible_loop_var": "item",
                                 "changed": false,
+                                "false_condition": "item.job == \"developer\"",
                                 "item": {
-                                    "dest": "NONE",
-                                    "src": "vdasize"
+                                    "job": "manager",
+                                    "uid": 4002,
+                                    "username": "manager2"
                                 },
-                                "msg": "",
-                                "rc": 0
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "dest": "NONE",
-                                    "src": "vdbsize"
-                                },
-                                "ansible_loop_var": "item",
-                                "changed": false,
-                                "item": {
-                                    "dest": "NONE",
-                                    "src": "vdbsize"
-                                },
-                                "msg": "",
-                                "rc": 0
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "dest": "NONE",
-                                    "src": "vdcsize"
-                                },
-                                "ansible_loop_var": "item",
-                                "changed": false,
-                                "item": {
-                                    "dest": "NONE",
-                                    "src": "vdcsize"
-                                },
-                                "msg": "",
-                                "rc": 0
+                                "skip_reason": "Conditional result was False"
                             }
                         ]
                     },
-                    "resolved_action": "ansible.builtin.replace",
-                    "start": "2026-08-25T12:32:13.904661+00:00",
-                    "task": "Replace the content of hwreport.txt",
-                    "task_action": "ansible.builtin.replace",
+                    "resolved_action": "ansible.builtin.user",
+                    "start": "2026-08-25T12:48:12.214981+00:00",
+                    "task": "Create developer users",
+                    "task_action": "ansible.builtin.user",
                     "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/hwreport2.yml:8",
-                    "task_uuid": "080027d8-b370-df10-76fc-000000000004",
-                    "uuid": "618de216-59ac-4051-8249-ea64600fff9b"
+                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:28",
+                    "task_uuid": "080027d8-b370-0545-99ac-000000000006",
+                    "uuid": "d97e8fbb-8770-4ab4-90e9-45490e9bffb4"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "8s",
+                    "__host": "node1",
+                    "__number": 4,
+                    "__result": "Ok",
+                    "__task": "Create manager users",
+                    "__task_action": "ansible.builtin.user",
+                    "duration": 8.419036,
+                    "end": "2026-08-25T12:48:27.374016+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Create developer and manager users",
+                    "play_pattern": "all",
+                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
+                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": true,
+                        "msg": "All items completed",
+                        "results": [
+                            {
+                                "_ansible_item_label": {
+                                    "job": "developer",
+                                    "uid": 3001,
+                                    "username": "developer1"
+                                },
+                                "ansible_loop_var": "item",
+                                "changed": false,
+                                "false_condition": "item.job == \"manager\"",
+                                "item": {
+                                    "job": "developer",
+                                    "uid": 3001,
+                                    "username": "developer1"
+                                },
+                                "skip_reason": "Conditional result was False"
+                            },
+                            {
+                                "_ansible_item_label": {
+                                    "job": "developer",
+                                    "uid": 3002,
+                                    "username": "developer2"
+                                },
+                                "ansible_loop_var": "item",
+                                "changed": false,
+                                "false_condition": "item.job == \"manager\"",
+                                "item": {
+                                    "job": "developer",
+                                    "uid": 3002,
+                                    "username": "developer2"
+                                },
+                                "skip_reason": "Conditional result was False"
+                            },
+                            {
+                                "_ansible_item_label": {
+                                    "job": "manager",
+                                    "uid": 4001,
+                                    "username": "manager1"
+                                },
+                                "ansible_loop_var": "item",
+                                "append": true,
+                                "changed": true,
+                                "comment": "",
+                                "group": 4001,
+                                "groups": "opsmgr",
+                                "home": "/home/manager1",
+                                "item": {
+                                    "job": "manager",
+                                    "uid": 4001,
+                                    "username": "manager1"
+                                },
+                                "move_home": false,
+                                "name": "manager1",
+                                "password": "NOT_LOGGING_PASSWORD",
+                                "shell": "/bin/bash",
+                                "state": "present",
+                                "uid": 4001
+                            },
+                            {
+                                "_ansible_item_label": {
+                                    "job": "manager",
+                                    "uid": 4002,
+                                    "username": "manager2"
+                                },
+                                "ansible_loop_var": "item",
+                                "append": true,
+                                "changed": true,
+                                "comment": "",
+                                "group": 4002,
+                                "groups": "opsmgr",
+                                "home": "/home/manager2",
+                                "item": {
+                                    "job": "manager",
+                                    "uid": 4002,
+                                    "username": "manager2"
+                                },
+                                "move_home": false,
+                                "name": "manager2",
+                                "password": "NOT_LOGGING_PASSWORD",
+                                "shell": "/bin/bash",
+                                "state": "present",
+                                "uid": 4002
+                            }
+                        ]
+                    },
+                    "resolved_action": "ansible.builtin.user",
+                    "start": "2026-08-25T12:48:18.954980+00:00",
+                    "task": "Create manager users",
+                    "task_action": "ansible.builtin.user",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:42",
+                    "task_uuid": "080027d8-b370-0545-99ac-000000000007",
+                    "uuid": "13620196-9d12-4f92-ac04-f9dca19754e9"
                 }
             ],
-            "uuid": "080027d8-b370-df10-76fc-000000000002"
+            "uuid": "080027d8-b370-0545-99ac-000000000002"
         }
     ],
     "settings_entries": {
         "ansible-navigator": {
             "ansible": {
+                "cmdline": "--vault-password-file secret.txt",
                 "config": {
                     "help": false
                 },
@@ -1114,7 +1296,7 @@
                 },
                 "playbook": {
                     "help": false,
-                    "path": "/home/desktop/git/ansible_playbook/hwreport2.yml"
+                    "path": "/home/desktop/git/ansible_playbook/user1.yml"
                 }
             },
             "ansible-builder": {
@@ -1181,7 +1363,7 @@
         "ansible-navigator.ansible-runner.job-events": "Defaults",
         "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
         "ansible-navigator.ansible-runner.timeout": "Not set",
-        "ansible-navigator.ansible.cmdline": "Not set",
+        "ansible-navigator.ansible.cmdline": "Command line",
         "ansible-navigator.ansible.config.help": "Defaults",
         "ansible-navigator.ansible.config.path": "Not set",
         "ansible-navigator.ansible.doc.help": "Defaults",
@@ -1231,22 +1413,32 @@
     "status_color": 10,
     "stdout": [
         "",
-        "PLAY [Generating hwreport file] ************************************************",
+        "PLAY [Create developer and manager users] **************************************",
         "",
         "TASK [Gathering Facts] *********************************************************",
         "\u001b[1;35m[WARNING]: Host 'node1' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.\u001b[0m",
         "\u001b[0;32mok: [node1]\u001b[0m",
         "",
-        "TASK [Replace the content of hwreport.txt] *************************************",
-        "\u001b[0;32mok: [node1] => (item={'src': 'hostname', 'dest': 'node1'})\u001b[0m",
-        "\u001b[0;32mok: [node1] => (item={'src': 'biosversion', 'dest': 'VirtualBox'})\u001b[0m",
-        "\u001b[0;32mok: [node1] => (item={'src': 'memory', 'dest': '1705'})\u001b[0m",
-        "\u001b[0;32mok: [node1] => (item={'src': 'vdasize', 'dest': 'NONE'})\u001b[0m",
-        "\u001b[0;32mok: [node1] => (item={'src': 'vdbsize', 'dest': 'NONE'})\u001b[0m",
-        "\u001b[0;32mok: [node1] => (item={'src': 'vdcsize', 'dest': 'NONE'})\u001b[0m",
+        "TASK [Create devops group] *****************************************************",
+        "\u001b[0;32mok: [node1]\u001b[0m",
+        "",
+        "TASK [Create opsmgr group] *****************************************************",
+        "\u001b[0;32mok: [node1]\u001b[0m",
+        "",
+        "TASK [Create developer users] **************************************************",
+        "\u001b[0;33mchanged: [node1] => (item={'username': 'developer1', 'uid': 3001, 'job': 'developer'})\u001b[0m",
+        "\u001b[0;33mchanged: [node1] => (item={'username': 'developer2', 'uid': 3002, 'job': 'developer'})\u001b[0m",
+        "\u001b[0;36mskipping: [node1] => (item={'username': 'manager1', 'uid': 4001, 'job': 'manager'}) \u001b[0m",
+        "\u001b[0;36mskipping: [node1] => (item={'username': 'manager2', 'uid': 4002, 'job': 'manager'}) \u001b[0m",
+        "",
+        "TASK [Create manager users] ****************************************************",
+        "\u001b[0;36mskipping: [node1] => (item={'username': 'developer1', 'uid': 3001, 'job': 'developer'}) \u001b[0m",
+        "\u001b[0;36mskipping: [node1] => (item={'username': 'developer2', 'uid': 3002, 'job': 'developer'}) \u001b[0m",
+        "\u001b[0;33mchanged: [node1] => (item={'username': 'manager1', 'uid': 4001, 'job': 'manager'})\u001b[0m",
+        "\u001b[0;33mchanged: [node1] => (item={'username': 'manager2', 'uid': 4002, 'job': 'manager'})\u001b[0m",
         "",
         "PLAY RECAP *********************************************************************",
-        "\u001b[0;32mnode1\u001b[0m                      : \u001b[0;32mok=2   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   "
+        "\u001b[0;33mnode1\u001b[0m                      : \u001b[0;32mok=5   \u001b[0m \u001b[0;33mchanged=2   \u001b[0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   "
     ],
     "version": "2.0.0"
 }

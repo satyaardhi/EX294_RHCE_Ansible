@@ -1,0 +1,46 @@
+---
+- name: Create developer accounts
+  hosts: dev,test
+  become: true
+  vars_files:
+    - /home/desktop/git/ansible_playbook/user_list.yml
+    - /home/desktop/git/ansible_playbook/locker.yml
+  tasks:
+    - name: Create devops group
+      ansible.builtin.group:
+        name: devops
+        state: present
+
+    - name: Create developer users
+      ansible.builtin.user:
+        name: "{{ item.username }}" # Double check if the YML file uses 'name' or 'username'
+        uid: "{{ item.uid }}"
+        groups: devops
+        append: true
+        password: "{{ pw_developer | password_hash('sha512') }}"
+        state: present
+      loop: "{{ users }}"
+      when: item.job == "developer"
+
+- name: Create manager accounts
+  hosts: prod
+  become: true
+  vars_files:
+    - /home/desktop/git/ansible_playbook/user_list.yml
+    - /home/desktop/git/ansible_playbook/locker.yml
+  tasks:
+    - name: Create opsmgr group
+      ansible.builtin.group:
+        name: opsmgr
+        state: present
+
+    - name: Create manager users
+      ansible.builtin.user:
+        name: "{{ item.username }}" # Double check if the YML file uses 'name' or 'username'
+        uid: "{{ item.uid }}"
+        groups: opsmgr
+        append: true
+        password: "{{ pw_manager | password_hash('sha512') }}"
+        state: present
+      loop: "{{ users }}"
+      when: item.job == "manager"
