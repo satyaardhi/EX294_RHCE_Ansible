@@ -18,6 +18,7 @@
       when: vg_check.rc != 0
 
     - name: Create 1500M logical volume
+      when: vg_check.rc == 0
       block:
         - name: Create data LV of 1500M
           community.general.lvol:
@@ -25,7 +26,8 @@
             lv: data
             size: 1500M
             state: present
-      
+          register: lv_creation
+                
         - name: Create ext4 filesystem on data LV
           community.general.filesystem:
             fstype: ext4
@@ -35,6 +37,7 @@
         - name: Display insufficient VG message
           ansible.builtin.debug:
             msg: "Insufficient size of vg"
+          when: lv_creation is defined and lv_creation.failed
 
         - name: Create data LV of 800M
           community.general.lvol:
@@ -42,8 +45,10 @@
             lv: data
             size: 800M
             state: present
+          when: lv_creation is defined and lv_creation.failed
 
         - name: Create ext4 filesystem on data LV
           community.general.filesystem:
             fstype: ext4
             dev: /dev/research/data
+          when: lv_creation is defined and lv_creation.failed

@@ -1,0 +1,12 @@
+---
+- name: Remove volume group
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Delete research volume group
+      community.general.lvg:
+        vg: research
+        state: absent
+        force: true
+

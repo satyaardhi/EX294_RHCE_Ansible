@@ -1,0 +1,12 @@
+---
+- name: Provision storage volume group
+  hosts: node1
+  become: true
+
+  tasks:
+    - name: Create the research volume group
+      community.general.lvg:
+        vg: research
+        pvs: /dev/sdb   # Replace with the exact backend storage disk on node1
+        state: present
+
