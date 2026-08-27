@@ -15,8 +15,8 @@
             number: 1
             part_type: primary
             state: present
-            part_start: 1MiB
             part_end: 1500MiB
+            unit: MiB
 
       rescue:
         - name: Display error message
@@ -29,8 +29,8 @@
             number: 1
             part_type: primary
             state: present
-            part_start: 1MiB
             part_end: 800MiB
+            unit: MiB
 
     - name: Create ext4 filesystem on sdb1
       community.general.filesystem:
@@ -59,8 +59,8 @@
             number: 1
             part_type: primary
             state: present
-            part_start: 1MiB
             part_end: 1500MiB
+            unit: MiB
 
       rescue:
         - name: Display error message
@@ -71,9 +71,10 @@
           community.general.parted:
             device: /dev/sdc
             number: 1
+            part_type: primary
             state: present
-            part_start: 1MiB
             part_end: 800MiB
+            unit: MiB
 
     - name: Create ext4 filesystem on sdc1
       community.general.filesystem:

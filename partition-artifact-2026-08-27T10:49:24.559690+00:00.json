@@ -1,32 +1,32 @@
 {
     "plays": [
         {
-            "__play_name": "Create developer and manager users",
-            "name": "Create developer and manager users",
-            "pattern": "all",
-            "play": "Create developer and manager users",
-            "play_pattern": "all",
-            "play_uuid": "080027d8-b370-0545-99ac-000000000002",
-            "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
-            "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+            "__play_name": "Configure partitions",
+            "name": "Configure partitions",
+            "pattern": "balancers",
+            "play": "Configure partitions",
+            "play_pattern": "balancers",
+            "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+            "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+            "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
             "tasks": [
                 {
                     "__changed": false,
-                    "__duration": "10s",
+                    "__duration": "7s",
                     "__host": "node1",
                     "__number": 0,
                     "__result": "Ok",
                     "__task": "Gathering Facts",
                     "__task_action": "gather_facts",
-                    "duration": 9.640795,
-                    "end": "2026-08-25T12:48:07.007088+00:00",
+                    "duration": 6.934869,
+                    "end": "2026-08-27T10:49:07.979978+00:00",
                     "event_loop": null,
                     "host": "node1",
-                    "play": "Create developer and manager users",
-                    "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
-                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
                     "remote_addr": "node1",
                     "res": {
                         "_ansible_verbose_override": true,
@@ -64,24 +64,24 @@
                                 "root": "/dev/mapper/rhel-root"
                             },
                             "ansible_date_time": {
-                                "date": "2026-08-25",
-                                "day": "25",
-                                "epoch": "1787662086",
-                                "epoch_int": "1787662086",
-                                "hour": "18",
-                                "iso8601": "2026-08-25T12:48:06Z",
-                                "iso8601_basic": "20260825T181806681284",
-                                "iso8601_basic_short": "20260825T181806",
-                                "iso8601_micro": "2026-08-25T12:48:06.681284Z",
-                                "minute": "18",
+                                "date": "2026-08-27",
+                                "day": "27",
+                                "epoch": "1787827747",
+                                "epoch_int": "1787827747",
+                                "hour": "16",
+                                "iso8601": "2026-08-27T10:49:07Z",
+                                "iso8601_basic": "20260827T161907665714",
+                                "iso8601_basic_short": "20260827T161907",
+                                "iso8601_micro": "2026-08-27T10:49:07.665714Z",
+                                "minute": "19",
                                 "month": "08",
-                                "second": "06",
-                                "time": "18:18:06",
+                                "second": "07",
+                                "time": "16:19:07",
                                 "tz": "IST",
                                 "tz_dst": "IST",
                                 "tz_offset": "+0530",
-                                "weekday": "Tuesday",
-                                "weekday_number": "2",
+                                "weekday": "Thursday",
+                                "weekday_number": "4",
                                 "weeknumber": "34",
                                 "year": "2026"
                             },
@@ -118,10 +118,6 @@
                                         "dm-name-rhel-swap",
                                         "dm-uuid-LVM-yJVAKK3AQDuFPfBisC0DQHMkbM05OJ3L7aEwt5sbKnRQbfngUG9tKQL3xEKdkdc8"
                                     ],
-                                    "dm-2": [
-                                        "dm-name-research-data",
-                                        "dm-uuid-LVM-4DZQIRYBSWTz8uXtXHNN4Lyc9P5yvTn6m7qGZhMtLTRzLKJO3ls1r8vhAJpfjd74"
-                                    ],
                                     "sda": [
                                         "ata-VBOX_HARDDISK_VB995192f9-c8d7bbf3"
                                     ],
@@ -136,8 +132,7 @@
                                         "lvm-pv-uuid-sufNPc-F0DF-xbdQ-k0ju-dYAz-qLNl-KQdOnC"
                                     ],
                                     "sdb": [
-                                        "ata-VBOX_HARDDISK_VB15e23843-2e2f8299",
-                                        "lvm-pv-uuid-rX7mo8-V8fM-ew1O-a9OS-aMDI-G12j-sodXeq"
+                                        "ata-VBOX_HARDDISK_VB15e23843-2e2f8299"
                                     ],
                                     "sdc": [
                                         "ata-VBOX_HARDDISK_VBe9b6956a-7777c215"
@@ -154,9 +149,6 @@
                                     "sda3": [
                                         "dm-0",
                                         "dm-1"
-                                    ],
-                                    "sdb": [
-                                        "dm-2"
                                     ]
                                 },
                                 "uuids": {
@@ -165,9 +157,6 @@
                                     ],
                                     "dm-1": [
                                         "f9111234-285a-45d8-b889-c6f7ac544a63"
-                                    ],
-                                    "dm-2": [
-                                        "96d4813d-b063-4d09-aa77-606ca40df4b7"
                                     ],
                                     "sda2": [
                                         "a70e0971-2c46-4981-a261-20fd7a6d8d1c"
@@ -227,34 +216,6 @@
                                     "sectors": 4194304,
                                     "sectorsize": "512",
                                     "size": "2.00 GB",
-                                    "support_discard": "0",
-                                    "vendor": null,
-                                    "virtual": 1
-                                },
-                                "dm-2": {
-                                    "holders": [],
-                                    "host": "",
-                                    "links": {
-                                        "ids": [
-                                            "dm-name-research-data",
-                                            "dm-uuid-LVM-4DZQIRYBSWTz8uXtXHNN4Lyc9P5yvTn6m7qGZhMtLTRzLKJO3ls1r8vhAJpfjd74"
-                                        ],
-                                        "labels": [],
-                                        "masters": [],
-                                        "uuids": [
-                                            "96d4813d-b063-4d09-aa77-606ca40df4b7"
-                                        ]
-                                    },
-                                    "model": null,
-                                    "partitions": {},
-                                    "removable": "0",
-                                    "rotational": "1",
-                                    "sas_address": null,
-                                    "sas_device_handle": null,
-                                    "scheduler_mode": "",
-                                    "sectors": 3072000,
-                                    "sectorsize": "512",
-                                    "size": "1.46 GB",
                                     "support_discard": "0",
                                     "vendor": null,
                                     "virtual": 1
@@ -343,19 +304,14 @@
                                     "virtual": 1
                                 },
                                 "sdb": {
-                                    "holders": [
-                                        "research-data"
-                                    ],
+                                    "holders": [],
                                     "host": "SATA controller: Intel Corporation 82801HM/HEM (ICH8M/ICH8M-E) SATA Controller [AHCI mode] (rev 02)",
                                     "links": {
                                         "ids": [
-                                            "ata-VBOX_HARDDISK_VB15e23843-2e2f8299",
-                                            "lvm-pv-uuid-rX7mo8-V8fM-ew1O-a9OS-aMDI-G12j-sodXeq"
+                                            "ata-VBOX_HARDDISK_VB15e23843-2e2f8299"
                                         ],
                                         "labels": [],
-                                        "masters": [
-                                            "dm-2"
-                                        ],
+                                        "masters": [],
                                         "uuids": []
                                     },
                                     "model": "VBOX HARDDISK",
@@ -731,9 +687,9 @@
                                 "type": "loopback"
                             },
                             "ansible_loadavg": {
-                                "15m": 0.099609375,
-                                "1m": 0.22509765625,
-                                "5m": 0.09765625
+                                "15m": 0.0869140625,
+                                "1m": 0.03271484375,
+                                "5m": 0.11669921875
                             },
                             "ansible_local": {},
                             "ansible_locally_reachable_ips": {
@@ -751,10 +707,6 @@
                             "ansible_lsb": {},
                             "ansible_lvm": {
                                 "lvs": {
-                                    "data": {
-                                        "size_g": "1.46",
-                                        "vg": "research"
-                                    },
                                     "root": {
                                         "size_g": "16.00",
                                         "vg": "rhel"
@@ -769,25 +721,9 @@
                                         "free_g": "0",
                                         "size_g": "18.00",
                                         "vg": "rhel"
-                                    },
-                                    "/dev/sdb": {
-                                        "free_g": "18.53",
-                                        "size_g": "20.00",
-                                        "vg": "research"
                                     }
                                 },
                                 "vgs": {
-                                    "research": {
-                                        "free_g": "18.53",
-                                        "lvs": {
-                                            "data": {
-                                                "size_g": "1.46"
-                                            }
-                                        },
-                                        "num_lvs": "1",
-                                        "num_pvs": "1",
-                                        "size_g": "20.00"
-                                    },
                                     "rhel": {
                                         "free_g": "0",
                                         "lvs": {
@@ -806,16 +742,16 @@
                             },
                             "ansible_machine": "x86_64",
                             "ansible_machine_id": "f6a57dfb94fe41599c9180e44c4e0a1a",
-                            "ansible_memfree_mb": 1111,
+                            "ansible_memfree_mb": 1186,
                             "ansible_memory_mb": {
                                 "nocache": {
-                                    "free": 1448,
-                                    "used": 257
+                                    "free": 1449,
+                                    "used": 256
                                 },
                                 "real": {
-                                    "free": 1111,
+                                    "free": 1186,
                                     "total": 1705,
-                                    "used": 594
+                                    "used": 519
                                 },
                                 "swap": {
                                     "cached": 0,
@@ -827,20 +763,20 @@
                             "ansible_memtotal_mb": 1705,
                             "ansible_mounts": [
                                 {
-                                    "block_available": 3594376,
+                                    "block_available": 3592733,
                                     "block_size": 4096,
                                     "block_total": 4176896,
-                                    "block_used": 582520,
+                                    "block_used": 584163,
                                     "device": "/dev/mapper/rhel-root",
                                     "dump": 0,
                                     "fstype": "xfs",
-                                    "inode_available": 8330756,
+                                    "inode_available": 8330745,
                                     "inode_total": 8386560,
-                                    "inode_used": 55804,
+                                    "inode_used": 55815,
                                     "mount": "/",
                                     "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota",
                                     "passno": 0,
-                                    "size_available": 14722564096,
+                                    "size_available": 14715834368,
                                     "size_total": 17108566016,
                                     "uuid": "0d6b16a7-05bb-47f1-a64a-de18dfdd9ca3"
                                 },
@@ -938,7 +874,7 @@
                                 "features": "+PAM +AUDIT +SELINUX -APPARMOR +IMA +IPE +SMACK +SECCOMP -GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN -IPTC +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT -QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF +XKBCOMMON +UTMP +SYSVINIT +LIBARCHIVE",
                                 "version": 257
                             },
-                            "ansible_uptime_seconds": 9084,
+                            "ansible_uptime_seconds": 7831,
                             "ansible_user_dir": "/root",
                             "ansible_user_gecos": "Super User",
                             "ansible_user_gid": 0,
@@ -965,320 +901,462 @@
                         ]
                     },
                     "resolved_action": "ansible.builtin.gather_facts",
-                    "start": "2026-08-25T12:47:57.366293+00:00",
+                    "start": "2026-08-27T10:49:01.045109+00:00",
                     "task": "Gathering Facts",
                     "task_action": "gather_facts",
                     "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:2",
-                    "task_uuid": "080027d8-b370-0545-99ac-00000000000b",
-                    "uuid": "4042d1d0-380e-4ba1-9305-0d2bbbdf75ee"
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:3",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000018",
+                    "uuid": "73034e5a-328e-440d-9023-1828671a68fa"
                 },
                 {
-                    "__changed": false,
-                    "__duration": "3s",
+                    "__changed": true,
+                    "__duration": "2s",
                     "__host": "node1",
                     "__number": 1,
                     "__result": "Ok",
-                    "__task": "Create devops group",
-                    "__task_action": "ansible.builtin.group",
-                    "duration": 2.982128,
-                    "end": "2026-08-25T12:48:10.020973+00:00",
+                    "__task": "Create a 1500MiB partition on sdb",
+                    "__task_action": "community.general.parted",
+                    "duration": 2.399324,
+                    "end": "2026-08-27T10:49:10.428022+00:00",
                     "event_loop": null,
                     "host": "node1",
-                    "play": "Create developer and manager users",
-                    "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
-                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
                     "remote_addr": "node1",
                     "res": {
-                        "changed": false,
-                        "gid": 1004,
-                        "name": "devops",
-                        "state": "present",
-                        "system": false
+                        "changed": true,
+                        "disk": {
+                            "dev": "/dev/sdb",
+                            "logical_block": 512,
+                            "model": "ATA VBOX HARDDISK",
+                            "physical_block": 512,
+                            "size": 20480.0,
+                            "table": "msdos",
+                            "unit": "mib"
+                        },
+                        "partitions": [
+                            {
+                                "begin": 1.0,
+                                "end": 1500.0,
+                                "flags": [],
+                                "fstype": "",
+                                "name": "",
+                                "num": 1,
+                                "size": 1499.0,
+                                "unit": "mib"
+                            }
+                        ],
+                        "script": [
+                            "unit",
+                            "MiB",
+                            "mklabel",
+                            "msdos",
+                            "mkpart",
+                            "primary",
+                            "0%",
+                            "1500MiB"
+                        ]
                     },
-                    "resolved_action": "ansible.builtin.group",
-                    "start": "2026-08-25T12:48:07.038845+00:00",
-                    "task": "Create devops group",
-                    "task_action": "ansible.builtin.group",
+                    "resolved_action": "community.general.parted",
+                    "start": "2026-08-27T10:49:08.028698+00:00",
+                    "task": "Create a 1500MiB partition on sdb",
+                    "task_action": "community.general.parted",
                     "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:12",
-                    "task_uuid": "080027d8-b370-0545-99ac-000000000004",
-                    "uuid": "f5652c9f-2cfc-4166-9ea9-621efaae0d61"
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:12",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000004",
+                    "uuid": "4dc4952c-ce15-4bbe-9cc9-427aaed937fc"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "2s",
+                    "__host": "node1",
+                    "__number": 2,
+                    "__result": "Ok",
+                    "__task": "Create ext4 filesystem on sdb1",
+                    "__task_action": "community.general.filesystem",
+                    "duration": 2.143586,
+                    "end": "2026-08-27T10:49:12.592425+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": true
+                    },
+                    "resolved_action": "community.general.filesystem",
+                    "start": "2026-08-27T10:49:10.448839+00:00",
+                    "task": "Create ext4 filesystem on sdb1",
+                    "task_action": "community.general.filesystem",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:35",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000008",
+                    "uuid": "cee45970-367c-4f7a-8597-f330d1c08fb3"
                 },
                 {
                     "__changed": false,
                     "__duration": "2s",
                     "__host": "node1",
-                    "__number": 2,
+                    "__number": 3,
                     "__result": "Ok",
-                    "__task": "Create opsmgr group",
-                    "__task_action": "ansible.builtin.group",
-                    "duration": 2.161907,
-                    "end": "2026-08-25T12:48:12.197284+00:00",
+                    "__task": "Create mount point for sdb1",
+                    "__task_action": "ansible.builtin.file",
+                    "duration": 1.578098,
+                    "end": "2026-08-27T10:49:14.192069+00:00",
                     "event_loop": null,
                     "host": "node1",
-                    "play": "Create developer and manager users",
-                    "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
-                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
                     "remote_addr": "node1",
                     "res": {
                         "changed": false,
-                        "gid": 3003,
-                        "name": "opsmgr",
-                        "state": "present",
-                        "system": false
+                        "gid": 0,
+                        "group": "root",
+                        "mode": "0755",
+                        "owner": "root",
+                        "path": "/newpart",
+                        "secontext": "unconfined_u:object_r:default_t:s0",
+                        "size": 6,
+                        "state": "directory",
+                        "uid": 0
                     },
-                    "resolved_action": "ansible.builtin.group",
-                    "start": "2026-08-25T12:48:10.035377+00:00",
-                    "task": "Create opsmgr group",
-                    "task_action": "ansible.builtin.group",
+                    "resolved_action": "ansible.builtin.file",
+                    "start": "2026-08-27T10:49:12.613971+00:00",
+                    "task": "Create mount point for sdb1",
+                    "task_action": "ansible.builtin.file",
                     "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:20",
-                    "task_uuid": "080027d8-b370-0545-99ac-000000000005",
-                    "uuid": "69434c2e-c0b8-4ebf-84df-6d6192873bcd"
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:40",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000009",
+                    "uuid": "7dd5cb1b-f50f-4e16-83b0-f24358b175c6"
                 },
                 {
                     "__changed": true,
-                    "__duration": "7s",
-                    "__host": "node1",
-                    "__number": 3,
-                    "__result": "Ok",
-                    "__task": "Create developer users",
-                    "__task_action": "ansible.builtin.user",
-                    "duration": 6.709944,
-                    "end": "2026-08-25T12:48:18.924925+00:00",
-                    "event_loop": null,
-                    "host": "node1",
-                    "play": "Create developer and manager users",
-                    "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
-                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
-                    "remote_addr": "node1",
-                    "res": {
-                        "changed": true,
-                        "msg": "All items completed",
-                        "results": [
-                            {
-                                "_ansible_item_label": {
-                                    "job": "developer",
-                                    "uid": 3001,
-                                    "username": "developer1"
-                                },
-                                "ansible_loop_var": "item",
-                                "append": true,
-                                "changed": true,
-                                "comment": "",
-                                "group": 3001,
-                                "groups": "devops",
-                                "home": "/home/developer1",
-                                "item": {
-                                    "job": "developer",
-                                    "uid": 3001,
-                                    "username": "developer1"
-                                },
-                                "move_home": false,
-                                "name": "developer1",
-                                "password": "NOT_LOGGING_PASSWORD",
-                                "shell": "/bin/bash",
-                                "state": "present",
-                                "uid": 3001
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "job": "developer",
-                                    "uid": 3002,
-                                    "username": "developer2"
-                                },
-                                "ansible_loop_var": "item",
-                                "append": true,
-                                "changed": true,
-                                "comment": "",
-                                "group": 3002,
-                                "groups": "devops",
-                                "home": "/home/developer2",
-                                "item": {
-                                    "job": "developer",
-                                    "uid": 3002,
-                                    "username": "developer2"
-                                },
-                                "move_home": false,
-                                "name": "developer2",
-                                "password": "NOT_LOGGING_PASSWORD",
-                                "shell": "/bin/bash",
-                                "state": "present",
-                                "uid": 3002
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "job": "manager",
-                                    "uid": 4001,
-                                    "username": "manager1"
-                                },
-                                "ansible_loop_var": "item",
-                                "changed": false,
-                                "false_condition": "item.job == \"developer\"",
-                                "item": {
-                                    "job": "manager",
-                                    "uid": 4001,
-                                    "username": "manager1"
-                                },
-                                "skip_reason": "Conditional result was False"
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "job": "manager",
-                                    "uid": 4002,
-                                    "username": "manager2"
-                                },
-                                "ansible_loop_var": "item",
-                                "changed": false,
-                                "false_condition": "item.job == \"developer\"",
-                                "item": {
-                                    "job": "manager",
-                                    "uid": 4002,
-                                    "username": "manager2"
-                                },
-                                "skip_reason": "Conditional result was False"
-                            }
-                        ]
-                    },
-                    "resolved_action": "ansible.builtin.user",
-                    "start": "2026-08-25T12:48:12.214981+00:00",
-                    "task": "Create developer users",
-                    "task_action": "ansible.builtin.user",
-                    "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:28",
-                    "task_uuid": "080027d8-b370-0545-99ac-000000000006",
-                    "uuid": "d97e8fbb-8770-4ab4-90e9-45490e9bffb4"
-                },
-                {
-                    "__changed": true,
-                    "__duration": "8s",
+                    "__duration": "2s",
                     "__host": "node1",
                     "__number": 4,
                     "__result": "Ok",
-                    "__task": "Create manager users",
-                    "__task_action": "ansible.builtin.user",
-                    "duration": 8.419036,
-                    "end": "2026-08-25T12:48:27.374016+00:00",
+                    "__task": "Mount sdb1 persistently",
+                    "__task_action": "ansible.posix.mount",
+                    "duration": 1.819799,
+                    "end": "2026-08-27T10:49:16.027314+00:00",
                     "event_loop": null,
                     "host": "node1",
-                    "play": "Create developer and manager users",
-                    "play_pattern": "all",
-                    "play_uuid": "080027d8-b370-0545-99ac-000000000002",
-                    "playbook": "/home/desktop/git/ansible_playbook/user1.yml",
-                    "playbook_uuid": "98573ec9-7f5f-4505-a05a-113b7f0a4ea2",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "res": {
+                        "backup_file": "",
+                        "boot": "yes",
+                        "changed": true,
+                        "dump": "0",
+                        "fstab": "/etc/fstab",
+                        "fstype": "ext4",
+                        "name": "/newpart",
+                        "opts": "defaults",
+                        "passno": "0",
+                        "src": "/dev/sdb1"
+                    },
+                    "resolved_action": "ansible.posix.mount",
+                    "start": "2026-08-27T10:49:14.207515+00:00",
+                    "task": "Mount sdb1 persistently",
+                    "task_action": "ansible.posix.mount",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:46",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-00000000000a",
+                    "uuid": "5505ca90-66de-426f-9cda-03ea1b64b8b7"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "2s",
+                    "__host": "node1",
+                    "__number": 5,
+                    "__result": "Ok",
+                    "__task": "Create a 1500MiB partition on sdc",
+                    "__task_action": "community.general.parted",
+                    "duration": 1.839396,
+                    "end": "2026-08-27T10:49:17.881983+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
                     "remote_addr": "node1",
                     "res": {
                         "changed": true,
-                        "msg": "All items completed",
-                        "results": [
+                        "disk": {
+                            "dev": "/dev/sdc",
+                            "logical_block": 512,
+                            "model": "ATA VBOX HARDDISK",
+                            "physical_block": 512,
+                            "size": 20480.0,
+                            "table": "msdos",
+                            "unit": "mib"
+                        },
+                        "partitions": [
                             {
-                                "_ansible_item_label": {
-                                    "job": "developer",
-                                    "uid": 3001,
-                                    "username": "developer1"
-                                },
-                                "ansible_loop_var": "item",
-                                "changed": false,
-                                "false_condition": "item.job == \"manager\"",
-                                "item": {
-                                    "job": "developer",
-                                    "uid": 3001,
-                                    "username": "developer1"
-                                },
-                                "skip_reason": "Conditional result was False"
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "job": "developer",
-                                    "uid": 3002,
-                                    "username": "developer2"
-                                },
-                                "ansible_loop_var": "item",
-                                "changed": false,
-                                "false_condition": "item.job == \"manager\"",
-                                "item": {
-                                    "job": "developer",
-                                    "uid": 3002,
-                                    "username": "developer2"
-                                },
-                                "skip_reason": "Conditional result was False"
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "job": "manager",
-                                    "uid": 4001,
-                                    "username": "manager1"
-                                },
-                                "ansible_loop_var": "item",
-                                "append": true,
-                                "changed": true,
-                                "comment": "",
-                                "group": 4001,
-                                "groups": "opsmgr",
-                                "home": "/home/manager1",
-                                "item": {
-                                    "job": "manager",
-                                    "uid": 4001,
-                                    "username": "manager1"
-                                },
-                                "move_home": false,
-                                "name": "manager1",
-                                "password": "NOT_LOGGING_PASSWORD",
-                                "shell": "/bin/bash",
-                                "state": "present",
-                                "uid": 4001
-                            },
-                            {
-                                "_ansible_item_label": {
-                                    "job": "manager",
-                                    "uid": 4002,
-                                    "username": "manager2"
-                                },
-                                "ansible_loop_var": "item",
-                                "append": true,
-                                "changed": true,
-                                "comment": "",
-                                "group": 4002,
-                                "groups": "opsmgr",
-                                "home": "/home/manager2",
-                                "item": {
-                                    "job": "manager",
-                                    "uid": 4002,
-                                    "username": "manager2"
-                                },
-                                "move_home": false,
-                                "name": "manager2",
-                                "password": "NOT_LOGGING_PASSWORD",
-                                "shell": "/bin/bash",
-                                "state": "present",
-                                "uid": 4002
+                                "begin": 1.0,
+                                "end": 1500.0,
+                                "flags": [],
+                                "fstype": "",
+                                "name": "",
+                                "num": 1,
+                                "size": 1499.0,
+                                "unit": "mib"
                             }
+                        ],
+                        "script": [
+                            "unit",
+                            "MiB",
+                            "mklabel",
+                            "msdos",
+                            "mkpart",
+                            "primary",
+                            "0%",
+                            "1500MiB"
                         ]
                     },
-                    "resolved_action": "ansible.builtin.user",
-                    "start": "2026-08-25T12:48:18.954980+00:00",
-                    "task": "Create manager users",
-                    "task_action": "ansible.builtin.user",
+                    "resolved_action": "community.general.parted",
+                    "start": "2026-08-27T10:49:16.042587+00:00",
+                    "task": "Create a 1500MiB partition on sdc",
+                    "task_action": "community.general.parted",
                     "task_args": "",
-                    "task_path": "/home/desktop/git/ansible_playbook/user1.yml:42",
-                    "task_uuid": "080027d8-b370-0545-99ac-000000000007",
-                    "uuid": "13620196-9d12-4f92-ac04-f9dca19754e9"
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:56",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-00000000000c",
+                    "uuid": "d4544c8f-2cdc-4387-ad53-5b5204cd0642"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "2s",
+                    "__host": "node1",
+                    "__number": 6,
+                    "__result": "Ok",
+                    "__task": "Create ext4 filesystem on sdc1",
+                    "__task_action": "community.general.filesystem",
+                    "duration": 1.597545,
+                    "end": "2026-08-27T10:49:19.497254+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": true
+                    },
+                    "resolved_action": "community.general.filesystem",
+                    "start": "2026-08-27T10:49:17.899709+00:00",
+                    "task": "Create ext4 filesystem on sdc1",
+                    "task_action": "community.general.filesystem",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:79",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000010",
+                    "uuid": "b06f3059-9ad7-44fc-b955-8ad30c491835"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "1s",
+                    "__host": "node1",
+                    "__number": 7,
+                    "__result": "Ok",
+                    "__task": "Create mount point for sdc1",
+                    "__task_action": "ansible.builtin.file",
+                    "duration": 1.481122,
+                    "end": "2026-08-27T10:49:20.992533+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": true,
+                        "gid": 0,
+                        "group": "root",
+                        "mode": "0755",
+                        "owner": "root",
+                        "path": "/newpart1",
+                        "secontext": "unconfined_u:object_r:default_t:s0",
+                        "size": 6,
+                        "state": "directory",
+                        "uid": 0
+                    },
+                    "resolved_action": "ansible.builtin.file",
+                    "start": "2026-08-27T10:49:19.511411+00:00",
+                    "task": "Create mount point for sdc1",
+                    "task_action": "ansible.builtin.file",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:84",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000011",
+                    "uuid": "9ef25bb4-1a97-4b4c-9281-7192f98124ed"
+                },
+                {
+                    "__changed": true,
+                    "__duration": "1s",
+                    "__host": "node1",
+                    "__number": 8,
+                    "__result": "Ok",
+                    "__task": "Mount sdc1 persistently",
+                    "__task_action": "ansible.posix.mount",
+                    "duration": 1.405356,
+                    "end": "2026-08-27T10:49:22.420314+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "res": {
+                        "backup_file": "",
+                        "boot": "yes",
+                        "changed": true,
+                        "dump": "0",
+                        "fstab": "/etc/fstab",
+                        "fstype": "ext4",
+                        "name": "/newpart1",
+                        "opts": "defaults",
+                        "passno": "0",
+                        "src": "/dev/sdc1"
+                    },
+                    "resolved_action": "ansible.posix.mount",
+                    "start": "2026-08-27T10:49:21.014958+00:00",
+                    "task": "Mount sdc1 persistently",
+                    "task_action": "ansible.posix.mount",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:90",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000012",
+                    "uuid": "3adf98af-de24-4032-be82-0d88d55c9427"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "2s",
+                    "__host": "node1",
+                    "__number": 9,
+                    "__result": "Ok",
+                    "__task": "Check whether sdd exists",
+                    "__task_action": "ansible.builtin.stat",
+                    "duration": 1.728061,
+                    "end": "2026-08-27T10:49:24.166183+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": false,
+                        "stat": {
+                            "atime": 1787819996.4396176,
+                            "attr_flags": "",
+                            "attributes": [],
+                            "block_size": 512,
+                            "blocks": 0,
+                            "charset": "binary",
+                            "ctime": 1787819996.4396176,
+                            "dev": 6,
+                            "device_type": 2096,
+                            "disk_usage_bytes": 0,
+                            "executable": false,
+                            "exists": true,
+                            "gid": 6,
+                            "gr_name": "disk",
+                            "inode": 280,
+                            "isblk": true,
+                            "ischr": false,
+                            "isdir": false,
+                            "isfifo": false,
+                            "isgid": false,
+                            "islnk": false,
+                            "isreg": false,
+                            "issock": false,
+                            "isuid": false,
+                            "mimetype": "inode/blockdevice",
+                            "mode": "0660",
+                            "mtime": 1787819996.4396176,
+                            "nlink": 1,
+                            "path": "/dev/sdd",
+                            "pw_name": "root",
+                            "readable": true,
+                            "rgrp": true,
+                            "roth": false,
+                            "rusr": true,
+                            "size": 0,
+                            "uid": 0,
+                            "version": null,
+                            "wgrp": true,
+                            "woth": false,
+                            "writeable": true,
+                            "wusr": true,
+                            "xgrp": false,
+                            "xoth": false,
+                            "xusr": false
+                        }
+                    },
+                    "resolved_action": "ansible.builtin.stat",
+                    "start": "2026-08-27T10:49:22.438122+00:00",
+                    "task": "Check whether sdd exists",
+                    "task_action": "ansible.builtin.stat",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:98",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000013",
+                    "uuid": "00e0f887-3e30-4748-8075-7f43a2a59080"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "node1",
+                    "__number": 10,
+                    "__result": "Skipped",
+                    "__task": "Display message if sdd does not exist",
+                    "__task_action": "ansible.builtin.debug",
+                    "duration": 0.041481,
+                    "end": "2026-08-27T10:49:24.235196+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "play": "Configure partitions",
+                    "play_pattern": "balancers",
+                    "play_uuid": "080027d8-b370-2d8c-15fe-000000000002",
+                    "playbook": "/home/desktop/git/ansible_playbook/partition.yml",
+                    "playbook_uuid": "dba55167-69ed-4230-a404-0951058c5b5b",
+                    "remote_addr": "node1",
+                    "resolved_action": "ansible.builtin.debug",
+                    "start": "2026-08-27T10:49:24.193715+00:00",
+                    "task": "Display message if sdd does not exist",
+                    "task_action": "ansible.builtin.debug",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/partition.yml:103",
+                    "task_uuid": "080027d8-b370-2d8c-15fe-000000000014",
+                    "uuid": "52ba864f-1f6c-4951-8ebd-f428850c1514"
                 }
             ],
-            "uuid": "080027d8-b370-0545-99ac-000000000002"
+            "uuid": "080027d8-b370-2d8c-15fe-000000000002"
         }
     ],
     "settings_entries": {
         "ansible-navigator": {
             "ansible": {
-                "cmdline": "--vault-password-file secret.txt",
                 "config": {
                     "help": false
                 },
@@ -1296,7 +1374,7 @@
                 },
                 "playbook": {
                     "help": false,
-                    "path": "/home/desktop/git/ansible_playbook/user1.yml"
+                    "path": "/home/desktop/git/ansible_playbook/partition.yml"
                 }
             },
             "ansible-builder": {
@@ -1363,7 +1441,7 @@
         "ansible-navigator.ansible-runner.job-events": "Defaults",
         "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
         "ansible-navigator.ansible-runner.timeout": "Not set",
-        "ansible-navigator.ansible.cmdline": "Command line",
+        "ansible-navigator.ansible.cmdline": "Not set",
         "ansible-navigator.ansible.config.help": "Defaults",
         "ansible-navigator.ansible.config.path": "Not set",
         "ansible-navigator.ansible.doc.help": "Defaults",
@@ -1413,32 +1491,44 @@
     "status_color": 10,
     "stdout": [
         "",
-        "PLAY [Create developer and manager users] **************************************",
+        "PLAY [Configure partitions] ****************************************************",
         "",
         "TASK [Gathering Facts] *********************************************************",
         "\u001b[1;35m[WARNING]: Host 'node1' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.\u001b[0m",
         "\u001b[0;32mok: [node1]\u001b[0m",
         "",
-        "TASK [Create devops group] *****************************************************",
+        "TASK [Create a 1500MiB partition on sdb] ***************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Create ext4 filesystem on sdb1] ******************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Create mount point for sdb1] *********************************************",
         "\u001b[0;32mok: [node1]\u001b[0m",
         "",
-        "TASK [Create opsmgr group] *****************************************************",
+        "TASK [Mount sdb1 persistently] *************************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Create a 1500MiB partition on sdc] ***************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Create ext4 filesystem on sdc1] ******************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Create mount point for sdc1] *********************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Mount sdc1 persistently] *************************************************",
+        "\u001b[0;33mchanged: [node1]\u001b[0m",
+        "",
+        "TASK [Check whether sdd exists] ************************************************",
         "\u001b[0;32mok: [node1]\u001b[0m",
         "",
-        "TASK [Create developer users] **************************************************",
-        "\u001b[0;33mchanged: [node1] => (item={'username': 'developer1', 'uid': 3001, 'job': 'developer'})\u001b[0m",
-        "\u001b[0;33mchanged: [node1] => (item={'username': 'developer2', 'uid': 3002, 'job': 'developer'})\u001b[0m",
-        "\u001b[0;36mskipping: [node1] => (item={'username': 'manager1', 'uid': 4001, 'job': 'manager'}) \u001b[0m",
-        "\u001b[0;36mskipping: [node1] => (item={'username': 'manager2', 'uid': 4002, 'job': 'manager'}) \u001b[0m",
-        "",
-        "TASK [Create manager users] ****************************************************",
-        "\u001b[0;36mskipping: [node1] => (item={'username': 'developer1', 'uid': 3001, 'job': 'developer'}) \u001b[0m",
-        "\u001b[0;36mskipping: [node1] => (item={'username': 'developer2', 'uid': 3002, 'job': 'developer'}) \u001b[0m",
-        "\u001b[0;33mchanged: [node1] => (item={'username': 'manager1', 'uid': 4001, 'job': 'manager'})\u001b[0m",
-        "\u001b[0;33mchanged: [node1] => (item={'username': 'manager2', 'uid': 4002, 'job': 'manager'})\u001b[0m",
+        "TASK [Display message if sdd does not exist] ***********************************",
+        "\u001b[0;36mskipping: [node1]\u001b[0m",
         "",
         "PLAY RECAP *********************************************************************",
-        "\u001b[0;33mnode1\u001b[0m                      : \u001b[0;32mok=5   \u001b[0m \u001b[0;33mchanged=2   \u001b[0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   "
+        "\u001b[0;33mnode1\u001b[0m                      : \u001b[0;32mok=10  \u001b[0m \u001b[0;33mchanged=7   \u001b[0m unreachable=0    failed=0    \u001b[0;36mskipped=1   \u001b[0m rescued=0    ignored=0   "
     ],
     "version": "2.0.0"
 }
