@@ -1,0 +1,15 @@
+[dev]
+node1 ansible_host=192.168.29.187
+
+[test]
+node1 ansible_host=192.168.29.187
+
+[prod]
+node1 ansible_host=192.168.29.187
+
+[balancers]
+node2 ansible_host=192.168.29.39
+
+[webservers:children]
+prod
+
