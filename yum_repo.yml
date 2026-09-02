@@ -1,0 +1,24 @@
+---
+- name: Configure DNR Repositories
+  hosts: all
+  become: true
+
+  tasks:
+
+  - name: Configure EX294_BASE Repository
+    ansible.builtin.yum_repository:
+      name: EX294_BASE
+      description: Configure EX294 BASE Repository
+      baseurl: http://192.168.29.186/BaseOS/
+      gpgcheck: yes
+      gpgkey: http://192.168.29.186/RPM-GPG-KEY-redhat-release
+      enabled: yes
+
+  - name: Configure EX294_STREAM Repository
+    ansible.builtin.yum_repository:
+      name: EX294_STREAM
+      description: Configure EX294 STREAM Repository
+      baseurl: http://192.168.29.186/AppStream/
+      gpgcheck: yes
+      gpgkey: http://192.168.29.186/RPM-GPG-KEY-redhat-release
+      enabled: yes

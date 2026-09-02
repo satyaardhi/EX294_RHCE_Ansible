@@ -1,0 +1,11 @@
+[central-baseos]
+name=Central BaseOS Repository
+baseurl=http://192.168.29.186/BaseOS/
+enabled=1
+gpgcheck=0
+
+[central-appstream]
+name=Central AppStream Repository
+baseurl=http://192.168.29.186/AppStream/
+enabled=1
+gpgcheck=0
