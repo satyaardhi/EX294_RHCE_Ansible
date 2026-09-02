@@ -12,4 +12,3 @@ node2 ansible_host=192.168.29.39
 
 [webservers:children]
 prod
-
