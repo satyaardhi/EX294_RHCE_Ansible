@@ -1,0 +1,255 @@
+{
+    "plays": [
+        {
+            "__play_name": "Configure SELinux",
+            "name": "Configure SELinux",
+            "pattern": "all",
+            "play": "Configure SELinux",
+            "play_pattern": "all",
+            "play_uuid": "080027e8-56e9-aad2-c47a-000000000003",
+            "playbook": "/home/desktop/git/ansible_playbook/selinux.yml",
+            "playbook_uuid": "8e0e6ebd-74a0-4dea-82b9-f8117f0511d0",
+            "tasks": [
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "node1",
+                    "__number": 0,
+                    "__result": "Failed",
+                    "__task": "Gathering Facts",
+                    "__task_action": "gather_facts",
+                    "duration": 0.060678,
+                    "end": "2026-09-03T03:34:09.174436+00:00",
+                    "event_loop": null,
+                    "host": "node1",
+                    "ignore_errors": false,
+                    "play": "Configure SELinux",
+                    "play_pattern": "all",
+                    "play_uuid": "080027e8-56e9-aad2-c47a-000000000003",
+                    "playbook": "/home/desktop/git/ansible_playbook/selinux.yml",
+                    "playbook_uuid": "8e0e6ebd-74a0-4dea-82b9-f8117f0511d0",
+                    "remote_addr": "node1",
+                    "res": {
+                        "changed": false,
+                        "exception": "(traceback unavailable)",
+                        "msg": "Task failed: Error processing keyword 'become': The value 'ture' could not be converted to 'bool'."
+                    },
+                    "resolved_action": "ansible.builtin.gather_facts",
+                    "start": "2026-09-03T03:34:09.113758+00:00",
+                    "task": "Gathering Facts",
+                    "task_action": "gather_facts",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/selinux.yml:2",
+                    "task_uuid": "080027e8-56e9-aad2-c47a-000000000007",
+                    "uuid": "8e00d1e2-9160-43c8-9e3b-b2a09d908f18"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "node2",
+                    "__number": 1,
+                    "__result": "Failed",
+                    "__task": "Gathering Facts",
+                    "__task_action": "gather_facts",
+                    "duration": 0.065431,
+                    "end": "2026-09-03T03:34:09.206440+00:00",
+                    "event_loop": null,
+                    "host": "node2",
+                    "ignore_errors": false,
+                    "play": "Configure SELinux",
+                    "play_pattern": "all",
+                    "play_uuid": "080027e8-56e9-aad2-c47a-000000000003",
+                    "playbook": "/home/desktop/git/ansible_playbook/selinux.yml",
+                    "playbook_uuid": "8e0e6ebd-74a0-4dea-82b9-f8117f0511d0",
+                    "remote_addr": "node2",
+                    "res": {
+                        "changed": false,
+                        "exception": "(traceback unavailable)",
+                        "msg": "Task failed: Error processing keyword 'become': The value 'ture' could not be converted to 'bool'."
+                    },
+                    "resolved_action": "ansible.builtin.gather_facts",
+                    "start": "2026-09-03T03:34:09.141009+00:00",
+                    "task": "Gathering Facts",
+                    "task_action": "gather_facts",
+                    "task_args": "",
+                    "task_path": "/home/desktop/git/ansible_playbook/selinux.yml:2",
+                    "task_uuid": "080027e8-56e9-aad2-c47a-000000000007",
+                    "uuid": "86eb5a7b-d258-4c05-83fb-98212c648c23"
+                }
+            ],
+            "uuid": "080027e8-56e9-aad2-c47a-000000000003"
+        }
+    ],
+    "settings_entries": {
+        "ansible-navigator": {
+            "ansible": {
+                "config": {
+                    "help": false
+                },
+                "doc": {
+                    "help": false,
+                    "plugin": {
+                        "type": "module"
+                    }
+                },
+                "inventory": {
+                    "entries": [
+                        "/home/desktop/git/ansible_playbook/inventory"
+                    ],
+                    "help": false
+                },
+                "playbook": {
+                    "help": false,
+                    "path": "/home/desktop/git/ansible_playbook/selinux.yml"
+                }
+            },
+            "ansible-builder": {
+                "help": false,
+                "workdir": "/home/desktop/git/ansible_playbook"
+            },
+            "ansible-runner": {
+                "job-events": false
+            },
+            "app": "run",
+            "collection-doc-cache-path": "/home/ram/.cache/ansible-navigator/collection_doc_cache.db",
+            "color": {
+                "enable": true,
+                "osc4": true
+            },
+            "editor": {
+                "command": "vi +{line_number} {filename}",
+                "console": true
+            },
+            "enable-prompts": false,
+            "exec": {
+                "command": "/bin/bash",
+                "shell": true
+            },
+            "execution-environment": {
+                "container-engine": "podman",
+                "enabled": false,
+                "image": "ghcr.io/ansible/community-ansible-dev-tools:latest",
+                "pull": {
+                    "policy": "tag"
+                }
+            },
+            "format": "yaml",
+            "images": {
+                "details": [
+                    "everything"
+                ]
+            },
+            "logging": {
+                "append": true,
+                "file": "/home/desktop/git/ansible_playbook/ansible-navigator.log",
+                "level": "warning"
+            },
+            "mode": "stdout",
+            "playbook-artifact": {
+                "enable": true,
+                "save-as": "{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json"
+            },
+            "settings": {
+                "effective": false,
+                "sample": false,
+                "schema": "json",
+                "sources": false
+            },
+            "time-zone": "UTC"
+        }
+    },
+    "settings_sources": {
+        "ansible-navigator.ansible-builder.help": "Defaults",
+        "ansible-navigator.ansible-builder.workdir": "Defaults",
+        "ansible-navigator.ansible-lint.config": "Not set",
+        "ansible-navigator.ansible-lint.lintables": "Not set",
+        "ansible-navigator.ansible-runner.artifact-dir": "Not set",
+        "ansible-navigator.ansible-runner.job-events": "Defaults",
+        "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
+        "ansible-navigator.ansible-runner.timeout": "Not set",
+        "ansible-navigator.ansible.cmdline": "Not set",
+        "ansible-navigator.ansible.config.help": "Defaults",
+        "ansible-navigator.ansible.config.path": "Not set",
+        "ansible-navigator.ansible.doc.help": "Defaults",
+        "ansible-navigator.ansible.doc.plugin.name": "Not set",
+        "ansible-navigator.ansible.doc.plugin.type": "Defaults",
+        "ansible-navigator.ansible.inventory.entries": "Ansible configuration file",
+        "ansible-navigator.ansible.inventory.help": "Defaults",
+        "ansible-navigator.ansible.playbook.help": "Defaults",
+        "ansible-navigator.ansible.playbook.path": "Command line",
+        "ansible-navigator.app": "Command line",
+        "ansible-navigator.collection-doc-cache-path": "Defaults",
+        "ansible-navigator.color.enable": "Defaults",
+        "ansible-navigator.color.osc4": "Defaults",
+        "ansible-navigator.editor.command": "Defaults",
+        "ansible-navigator.editor.console": "Defaults",
+        "ansible-navigator.enable-prompts": "Defaults",
+        "ansible-navigator.exec.command": "Defaults",
+        "ansible-navigator.exec.shell": "Defaults",
+        "ansible-navigator.execution-environment.container-engine": "Automatically determined",
+        "ansible-navigator.execution-environment.container-options": "Not set",
+        "ansible-navigator.execution-environment.enabled": "Command line",
+        "ansible-navigator.execution-environment.environment-variables.pass": "Not set",
+        "ansible-navigator.execution-environment.environment-variables.set": "Not set",
+        "ansible-navigator.execution-environment.image": "Defaults",
+        "ansible-navigator.execution-environment.pull.arguments": "Not set",
+        "ansible-navigator.execution-environment.pull.policy": "Defaults",
+        "ansible-navigator.execution-environment.volume-mounts": "Not set",
+        "ansible-navigator.format": "Defaults",
+        "ansible-navigator.images.details": "Defaults",
+        "ansible-navigator.inventory-columns": "Not set",
+        "ansible-navigator.logging.append": "Defaults",
+        "ansible-navigator.logging.file": "Defaults",
+        "ansible-navigator.logging.level": "Defaults",
+        "ansible-navigator.mode": "Command line",
+        "ansible-navigator.playbook-artifact.enable": "Defaults",
+        "ansible-navigator.playbook-artifact.replay": "Not set",
+        "ansible-navigator.playbook-artifact.save-as": "Defaults",
+        "ansible-navigator.settings.effective": "Defaults",
+        "ansible-navigator.settings.sample": "Defaults",
+        "ansible-navigator.settings.schema": "Defaults",
+        "ansible-navigator.settings.sources": "Defaults",
+        "ansible-navigator.time-zone": "Defaults",
+        "settings_file_path": "None",
+        "settings_file_source": "None"
+    },
+    "status": "failed",
+    "status_color": 9,
+    "stdout": [
+        "",
+        "PLAY [Configure SELinux] *******************************************************",
+        "",
+        "TASK [Gathering Facts] *********************************************************",
+        "\u001b[0;31m[ERROR]: Task failed: Error processing keyword 'become': The value 'ture' could not be converted to 'bool'.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mTask failed.\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m<<< caused by >>>\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mError processing keyword 'become'.\u001b[0m",
+        "\u001b[0;31mOrigin: /home/desktop/git/ansible_playbook/selinux.yml:4:11\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m2 - name: Configure SELinux\u001b[0m",
+        "\u001b[0;31m3   hosts: all\u001b[0m",
+        "\u001b[0;31m4   become: ture\u001b[0m",
+        "\u001b[0;31m            ^ column 11\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m<<< caused by >>>\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mThe value 'ture' could not be converted to 'bool'.\u001b[0m",
+        "\u001b[0;31mOrigin: /home/desktop/git/ansible_playbook/selinux.yml:4:11\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31m2 - name: Configure SELinux\u001b[0m",
+        "\u001b[0;31m3   hosts: all\u001b[0m",
+        "\u001b[0;31m4   become: ture\u001b[0m",
+        "\u001b[0;31m            ^ column 11\u001b[0m",
+        "\u001b[0;31m\u001b[0m",
+        "\u001b[0;31mfatal: [node1]: FAILED! => {\"changed\": false, \"msg\": \"Task failed: Error processing keyword 'become': The value 'ture' could not be converted to 'bool'.\"}\u001b[0m",
+        "\u001b[0;31mfatal: [node2]: FAILED! => {\"changed\": false, \"msg\": \"Task failed: Error processing keyword 'become': The value 'ture' could not be converted to 'bool'.\"}\u001b[0m",
+        "",
+        "PLAY RECAP *********************************************************************",
+        "\u001b[0;31mnode1\u001b[0m                      : ok=0    changed=0    unreachable=0    \u001b[0;31mfailed=1   \u001b[0m skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;31mnode2\u001b[0m                      : ok=0    changed=0    unreachable=0    \u001b[0;31mfailed=1   \u001b[0m skipped=0    rescued=0    ignored=0   "
+    ],
+    "version": "2.0.0"
+}

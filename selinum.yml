@@ -1,8 +1,0 @@
----
-- name: Configure SELinux on nodes
-  hosts: all
-  become: ture
-
-  tasks
-
-    - name
