@@ -1,0 +1,49 @@
+---
+- name: Configure developer and manager users
+  hosts: all
+  become: true
+
+  vars_files:
+    - /home/desktop/git/ansible_playbook/user_list.yml
+    - /home/desktop/git/ansible_playbook/locker.yml
+
+  tasks:
+    - name: Create devops group
+      ansible.builtin.group:
+        name: devops
+        state: present
+      when:
+        - "'dev' in group_names or 'test' in group_names"
+      
+    - name: Create opsmgr group
+      ansible.builtin.group:
+        name: opsmgr
+        state: present
+      when:
+        - "'prod' in group_names"
+    
+    - name: Create developer users
+      ansible.builtin.user:
+        name: "{{ item.username }}"
+        uid: "{{ item.uid }}"
+        groups: devops
+        state: present
+        append: yes
+        password: "{{ pw_developer | password_hash('sha512') }}"
+      loop: "{{ users }}"
+      when:
+        - item.job == "developer"
+        - "'dev' in group_names or 'test' in group_names"
+
+    - name: Create manager users
+      ansible.builtin.user:
+        name: "{{ item.username }}"
+        uid: "{{ item.uid }}"
+        groups: opsmgr
+        state: present
+        append: yes
+        password: "{{ pw_managers | password_hash('sha512') }}"
+      loop: "{{ users }}"
+      when:
+        - item.job == "manager"
+        - "'prod' in group_names"

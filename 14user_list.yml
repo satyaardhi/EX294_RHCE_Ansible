@@ -1,0 +1,17 @@
+---
+users:
+  - username: developer1
+    uid: 3001
+    job: developer
+
+  - username: developer2
+    uid: 3002
+    job: developer
+
+  - username: manager1
+    uid: 4001
+    job: manager
+
+  - username: manager2
+    uid: 4002
+    job: manager
