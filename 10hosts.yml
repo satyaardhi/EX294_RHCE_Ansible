@@ -1,0 +1,11 @@
+---
+- name: Configure all hosts
+  hosts: all
+  become: true
+
+  tasks:
+  
+    - name: Source Destination
+      ansible.builtin.template:
+        src: hosts.j2
+        dest: /etc/myhosts

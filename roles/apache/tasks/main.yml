@@ -10,15 +10,12 @@
 
 - name: Start and enable httpd service
   ansible.builtin.service:
-    name: httpd
+    name: "{{ item }}"
     state: started
     enabled: yes
-
-- name: Start and enable firewalld service
-  ansible.builtin.service:
-    name: firewalld
-    state: started
-    enabled: yes
+  loop:
+    - httpd
+    - firewalld
 
 - name: Permanently enable httpd service in firewalld
   ansible.posix.firewalld:
