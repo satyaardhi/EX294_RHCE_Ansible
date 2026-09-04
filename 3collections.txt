@@ -1,0 +1,8 @@
+$cd /home/desktop/git/ansible_playbook
+$ls (to check if ‘mycollections’ directory is created)
+$ansible-galaxy collection install ansible.posix -p mycollections/ --force
+$ansible-galaxy collection install community.general -p mycollections/ --force
+$ansible-galaxy collection list
+$git add .
+$git commit -m "collections"
+$git push
