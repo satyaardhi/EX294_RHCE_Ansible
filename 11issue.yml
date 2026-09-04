@@ -1,0 +1,25 @@
+---
+- name: Configure issue file
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Set Development Message
+      ansible.builtin.copy:
+        content: "Development\n"
+        dest: /etc/issue
+      when: inventory_hostname in groups['dev']
+
+    - name: Set Test Message
+      ansible.builtin.copy:
+        content: "Test\n"
+        dest: /etc/issue
+      when: inventory_hostname in groups['test']
+
+    - name: Set Production Message
+      ansible.builtin.copy:
+        content: "Production\n"
+        dest: /etc/issue
+      when: inventory_hostname in groups['prod']
+
+    
