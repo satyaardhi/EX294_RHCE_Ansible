@@ -1,0 +1,91 @@
+---
+- name: Configure partitions
+  hosts: balancers
+  become: true
+
+  tasks:
+    - name: Create a partition on vdb
+      block:
+        - name: Create a 1500 MiB partition on vdb
+          ansible.general.parted:
+            device: /dev/vdb
+            number: 1
+            part_type: primary
+            state: present
+            unit: MiB
+            part_end: 1500MiB
+
+      rescue:
+        - name: Display error message
+          ansible.builtin.debug:
+            msg: "Could not create partition of that size"
+
+        - name: Create a 800 MiB partition on vdb
+          ansible.general.parted:
+            device: /dev/vdb
+            number: 1
+            part_type: primary
+            state: present
+            unit: MiB
+            part_end: 800MiB
+
+    - name: Create ext4 filesystem on vdb1
+      ansible.general.filesystem:
+        fstype: ext4
+        dev: /dev/vdb1
+
+    - name: Create mount point for vdb1
+      ansible.builtin.file:
+        path: /newpart
+        state: directory
+        mode: '0755'
+
+    - name: Mount vdb1 persistently
+      ansible.posix.mount:
+        path: /newpart
+        src: /dev/vdb1
+        fstype: ext4
+        state: mounted  
+        
+    - name: Create a partition on vdc
+      block:
+        - name: Create a 1500 MiB partition on vdc
+          ansible.general.parted:
+            device: /dev/vdc
+            number: 1
+            part_type: primary
+            state: present
+            unit: MiB
+            part_end: 1500MiB
+
+      rescue:
+        - name: Display error message
+          ansible.builtin.debug:
+            msg: "Could not create partition of that size"
+      
+        - name: Create a 800 MiB partition on vdb
+          ansible.general.parted:
+            device: /dev/vdb
+            number: 1
+            part_type: primary
+            state: present
+            unit: MiB
+            part_end: 800MiB
+            
+    - name: Create ext4 filesystem on vdb1
+      ansible.general.filesystem:
+        fstype: ext4
+        dev: /dev/vdb1
+
+    - name: Create mount point for vdb1
+      ansible.builtin.file:
+        path: /newpart
+        state: directory
+        mode: '0755'
+
+    - name: Mount vdb1 persistently
+      ansible.posix.mount:
+        path: /newpart
+        src: /dev/vdb1
+        fstype: ext4
+        state: mounted          
